@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <!-- <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -80,23 +80,47 @@
         </a>
       </li>
     </ul>
+  </div>-->
+  <div>
+    <button @click="get()">获取user表数据</button>
   </div>
 </template>
 
 <script>
+// export default {
+//   name: 'HelloWorld',
+//   data () {
+//     return {
+//       msg: 'Welcome to Your Vue.js App'
+//     }
+//   }
+// }
+
+import axios from "axios";
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  data() {
+    return {};
+  },
+
+  methods: {
+    get() {
+      axios
+        .get("http://127.0.0.1/user")
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(err => {
+          console.log("获取数据失败" + err);
+        });
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+/* h1,
+h2 {
   font-weight: normal;
 }
 ul {
@@ -109,5 +133,5 @@ li {
 }
 a {
   color: #42b983;
-}
+} */
 </style>
