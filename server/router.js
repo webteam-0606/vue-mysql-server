@@ -1,7 +1,7 @@
 let express = require('express')
 let router = express.Router()
-let user = require('./API/user')
+let refresh1 = require('./API/refresh1')
 
-router.get('/user', user.get)
+router.get('/refresh1', refresh1.get)
 
 module.exports = router

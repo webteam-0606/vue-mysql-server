@@ -82,7 +82,7 @@
     </ul>
   </div>-->
   <div>
-    <button @click="get()">获取user表数据</button>
+    <button @click="get()">获取refresh1表数据</button>
   </div>
 </template>
 
@@ -105,7 +105,7 @@ export default {
   methods: {
     get() {
       axios
-        .get("http://127.0.0.1/user")
+        .get("http://127.0.0.1/refresh1")
         .then(res => {
           console.log(res.data);
         })
